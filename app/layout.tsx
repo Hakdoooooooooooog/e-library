@@ -16,12 +16,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  hero,
 }: Readonly<{
   children: React.ReactNode;
+  hero: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={`${robotoFont.variable} antialiased`}>{children}</body>
+      <body className={`${robotoFont.variable} antialiased`}>
+        {children} <section id="Home">{hero}</section>
+      </body>
     </html>
   );
 }

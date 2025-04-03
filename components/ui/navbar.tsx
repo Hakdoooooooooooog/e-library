@@ -19,7 +19,7 @@ const data = [
 ];
 
 const navbarVariant = cva(
-  "flex w-full items-center justify-between h-16 px-24 bg-blue-800 dark:bg-blue-950 shadow-[0_1.5rem_1.5rem_rgba(0,0,255,0.25)]",
+  "flex fixed top-0 left-0 w-full items-center justify-between h-16 px-24 bg-blue-800/75 dark:bg-blue-950/75 shadow-[0_1.5rem_1.5rem_rgba(0,0,255,0.25)]",
   {
     variants: {
       variant: {
@@ -61,9 +61,9 @@ const navbarLinks = ({
       <div className="relative flex w-full justify-end items-center space-x-4">
         <a
           href="/"
-          className="absolute w-[150px] h-[150px] left-0 bottom-[-7.5rem] flex items-center rounded-full"
+          className="absolute left-0 bottom-[-7.5rem] flex items-center rounded-full"
         >
-          <Image src="/logo.png" alt="Logo" fill />
+          <Image src="/logo.png" alt="Logo" height={150} width={150} priority />
         </a>
         <div className="hidden md:flex justify-between space-x-4">
           {data.map((link) => (
@@ -80,7 +80,7 @@ const navbarLinks = ({
       </div>
 
       <div className="flex md:hidden">
-        <button className="p-2 text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500">
+        <button className="p-2 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
