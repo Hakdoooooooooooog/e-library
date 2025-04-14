@@ -1,5 +1,6 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { RiArrowDownSFill } from "react-icons/ri";
+import Link from "next/link";
 import Image from "next/image";
 
 const data = [
@@ -19,7 +20,7 @@ const data = [
 ];
 
 const navbarVariant = cva(
-  "flex fixed z-[999] top-0 left-0 w-full items-center justify-between h-16 px-24 bg-blue-800/75 dark:bg-blue-950/75 shadow-[0_1.5rem_1.5rem_rgba(0,0,255,0.25)]",
+  "flex fixed z-[999] top-0 left-0 w-full items-center justify-between h-16 px-24 bg-blue-800/85 dark:bg-blue-950/85 shadow-[0_1.5rem_1.5rem_rgba(0,0,255,0.25)]",
   {
     variants: {
       variant: {
@@ -40,14 +41,12 @@ const Navbar = ({
 }) => {
   return (
     <nav role="main-navigation" className={navbarVariant({ variant })}>
-      {navbarLinks({
-        data,
-      })}
+      <NavbarLinks data={data} />
     </nav>
   );
 };
 
-const navbarLinks = ({
+const NavbarLinks = ({
   data,
 }: {
   data: Array<{
@@ -59,26 +58,15 @@ const navbarLinks = ({
   return (
     <>
       <div className="relative flex w-full justify-end items-center space-x-4">
-        <a
+        <Link
           href="/"
-          className="absolute left-16 bottom-[-7.5rem] flex items-center rounded-full"
+          className="absolute -left-12 md:left-16 bottom-[-5rem] flex items-center"
         >
-          <Image src="/logo.png" alt="Logo" height={150} width={150} priority />
-        </a>
+          <Image src="/logo.png" alt="Logo" height={100} width={100} priority />
+        </Link>
         <div className="hidden md:flex justify-between space-x-4">
           {data.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="flex items-center space-x-5 group"
-            >
-              <span className="relative text-md font-medium text-white">
-                {link.label}
-                {/* Line animation */}
-                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-white transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100" />
-              </span>
-              {link.icon && <span>{link.icon}</span>}
-            </a>
+            <NavbarLink key={link.href} link={link} />
           ))}
         </div>
       </div>
@@ -102,6 +90,31 @@ const navbarLinks = ({
         </button>
       </div>
     </>
+  );
+};
+
+const NavbarLink = ({
+  link,
+}: {
+  link: {
+    href: string;
+    label: string;
+    icon?: React.ReactNode;
+  };
+}) => {
+  return (
+    <a
+      key={link.href}
+      href={link.href}
+      className="flex items-center space-x-5 group"
+    >
+      <span className="relative text-md font-medium text-white">
+        {link.label}
+        {/* Line animation */}
+        <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-white transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100" />
+      </span>
+      {link.icon && <span>{link.icon}</span>}
+    </a>
   );
 };
 
