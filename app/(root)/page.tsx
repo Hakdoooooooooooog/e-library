@@ -24,7 +24,7 @@ export default function Home() {
                 height={100}
                 priority
               />
-              <h1 className="flex-[1_1_auto] text-4xl md:text-5xl font-extrabold">
+              <h1 className="flex-[1_1_auto] text-3xl md:text-5xl font-extrabold">
                 General Trias City Public Library
               </h1>
             </div>
