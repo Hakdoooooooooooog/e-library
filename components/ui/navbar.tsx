@@ -2,6 +2,8 @@ import { cva, VariantProps } from "class-variance-authority";
 import { RiArrowDownSFill } from "react-icons/ri";
 import Link from "next/link";
 import Image from "next/image";
+import { HTMLAttributes } from "react";
+import { cn } from "@/lib/utils";
 
 const data = [
   { href: "/", label: "Home" },
@@ -36,11 +38,16 @@ const navbarVariant = cva(
 
 const Navbar = ({
   variant,
+  className,
 }: {
   variant?: VariantProps<typeof navbarVariant>["variant"];
+  className?: HTMLAttributes<HTMLElement>["className"];
 }) => {
   return (
-    <nav role="main-navigation" className={navbarVariant({ variant })}>
+    <nav
+      role="navigation"
+      className={cn(navbarVariant({ variant }), className)}
+    >
       <NavbarLinks data={data} />
     </nav>
   );
@@ -57,14 +64,16 @@ const NavbarLinks = ({
 }) => {
   return (
     <>
-      <div className="relative flex w-full justify-end items-center space-x-4">
+      <div className="relative flex w-full justify-end items-center">
         <Link
           href="/"
-          className="absolute -left-12 md:left-16 bottom-[-5rem] flex items-center"
+          className="absolute -left-8 md:left-8 lg:left-16 bottom-[-5rem] flex items-center"
         >
-          <Image src="/logo.png" alt="Logo" height={100} width={100} priority />
+          <div className="size-25">
+            <Image src="/logo.png" alt="Logo" fill priority />
+          </div>
         </Link>
-        <div className="hidden md:flex justify-between space-x-4">
+        <div className="hidden md:flex justify-between gap-4">
           {data.map((link) => (
             <NavbarLink key={link.href} link={link} />
           ))}
@@ -103,18 +112,14 @@ const NavbarLink = ({
   };
 }) => {
   return (
-    <a
-      key={link.href}
-      href={link.href}
-      className="flex items-center space-x-5 group"
-    >
+    <Link href={link.href} className="flex items-center group">
       <span className="relative text-md font-medium text-white">
         {link.label}
         {/* Line animation */}
         <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-white transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100" />
       </span>
       {link.icon && <span>{link.icon}</span>}
-    </a>
+    </Link>
   );
 };
 

@@ -15,15 +15,36 @@ export default function Home() {
         </div>
         <span className="hero-image-overlay"></span>
         <div className="hero-content-container">
-          <div className="flex items-center justify-center gap-4">
-            <Image src="/logo.png" alt="Logo" width={150} height={150} />
-            <h1 className="hero-title">E-Library</h1>
+          <div className="flex flex-col items-center justify-center size-full gap-12">
+            <div className="flex w-full items-center gap-4">
+              <Image
+                src="/logo-hero.png"
+                alt="Public-library-logo"
+                width={100}
+                height={100}
+                priority
+              />
+              <h1 className="flex-[1_1_auto] text-4xl md:text-5xl font-extrabold">
+                General Trias City Public Library
+              </h1>
+            </div>
+            <div className="flex w-full flex-col items-start gap-4">
+              <h2 className="text-2xl md:text-3xl font-bold">
+                Building a Brighter Future:
+              </h2>
+              <p className="text-xl md:text-3xl">
+                General Trias e-Library Empowers Students with Free Services.
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col items-center justify-center gap-4">
-            <h2 className="hero-subtitle">Welcome to E-Library</h2>
-            <p className="hero-description">
-              Your one-stop solution for all your reading needs.
-            </p>
+          <div className="w-full flex flex-col items-start flex[1_1_100%] gap-4 place-self-end pb-8">
+            <h2 className="text-xl md:text-3xl font-bold">Office Hours:</h2>
+            <h3 className="text-md  font-medium">
+              Monday: <span className="font-bold">7 am - 4 pm</span>
+            </h3>
+            <h3 className="text-mdfont-medium">
+              Tuesday-Friday: <span className="font-bold">8 am - 5 pm</span>
+            </h3>
           </div>
         </div>
       </section>
