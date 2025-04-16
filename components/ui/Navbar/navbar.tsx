@@ -238,7 +238,7 @@ const NavbarSubMenu = ({
   return (
     <div
       className={cn(
-        "absolute top-full -left-1/2 -translate-1/16 mt-2 w-48 bg-blue-600/60 text-background rounded-md shadow-lg z-10 transition-all duration-200 ease-in-out",
+        "absolute top-full -translate-1/16 mt-2 w-48 bg-blue-600/60 text-background rounded-md shadow-lg z-10 transition-all duration-200 ease-in-out",
         isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
       )}
     >
@@ -249,7 +249,7 @@ const NavbarSubMenu = ({
             onMouseLeave={() => setIsHovered && setIsHovered(false)}
             key={item.href}
             href={item.href}
-            className="group w-full text-inherit block px-4 py-2"
+            className="group w-full text-inherit block p-4 text-sm font-medium hover:bg-blue-800/75 transition-colors duration-300 ease-in-out first:rounded-t-md last:rounded-b-md"
           >
             <span className="relative text-md font-medium">
               {item.label}
