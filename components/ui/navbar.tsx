@@ -67,11 +67,15 @@ const NavbarLinks = ({
       <div className="relative flex w-full justify-end items-center">
         <Link
           href="/"
-          className="absolute -left-8 md:left-8 lg:left-16 bottom-[-4rem] flex items-center"
+          className="absolute size-18 -left-8 md:left-8 lg:left-16 bottom-[-4rem] flex items-center"
         >
-          <div className="size-18">
-            <Image src="/logo.png" alt="Logo" fill priority />
-          </div>
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            fill
+            priority
+            sizes={"(max-width: 768px) 4rem, (max-width: 1200px) 4.5rem, 6rem"}
+          />
         </Link>
         <div className="hidden md:flex justify-between gap-4">
           {data.map((link) => (

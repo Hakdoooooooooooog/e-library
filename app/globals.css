@@ -135,10 +135,10 @@
 
 @layer components {
   .section-container {
-    @apply relative h-dvh w-full px-20 flex flex-col content-center items-center text-white;
+    @apply relative h-[80dvh] md:h-dvh w-full px-16 flex flex-col justify-center items-center text-white;
   }
   .hero-image {
-    @apply relative bg-cover blur-sm;
+    @apply absolute bg-cover blur-sm;
   }
 
   .hero-image-container {
@@ -150,6 +150,6 @@
   }
 
   .hero-content-container {
-    @apply absolute z-10 pt-16 px-20 inset-0 grid place-items-center md:grid-rows-1 gap-8;
+    @apply absolute size-full z-10 pt-16 px-16 inset-0 grid place-items-center grid-rows-1 gap-8;
   }
 }
