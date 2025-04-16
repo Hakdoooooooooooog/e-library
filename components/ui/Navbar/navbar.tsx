@@ -7,7 +7,6 @@ import Image from "next/image";
 import { HTMLAttributes, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useNavbarStore } from "./store";
-import { useShallow } from "zustand/shallow";
 
 type NavbarProps = Array<{
   href: string;
@@ -76,12 +75,7 @@ const Navbar = ({
 };
 
 const NavbarLinks = ({ data }: { data: NavbarProps }) => {
-  const { isOpen, setIsOpen } = useNavbarStore(
-    useShallow((state) => ({
-      isOpen: state.isOpen,
-      setIsOpen: state.setIsOpen,
-    }))
-  );
+  const { isOpen, setIsOpen } = useNavbarStore(["isOpen", "setIsOpen"]);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -206,11 +200,7 @@ const NavbarLink = ({
 };
 
 const NavbarDropdown = ({ data }: { data: NavbarProps }) => {
-  const { isOpen } = useNavbarStore(
-    useShallow((state) => ({
-      isOpen: state.isOpen,
-    }))
-  );
+  const { isOpen } = useNavbarStore(["isOpen"]);
 
   return (
     <div
@@ -238,7 +228,7 @@ const NavbarSubMenu = ({
   return (
     <div
       className={cn(
-        "absolute top-full -translate-1/16 mt-2 w-48 bg-blue-600/60 text-background rounded-md shadow-lg z-10 transition-all duration-200 ease-in-out",
+        "absolute top-full max-md:-left-1/2 -translate-1/16 mt-2 w-48 bg-blue-600/60 text-background rounded-md shadow-lg z-10 transition-all duration-200 ease-in-out",
         isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
       )}
     >
