@@ -135,10 +135,10 @@
 
 @layer components {
   .section-container {
-    @apply relative h-[80dvh] md:h-dvh w-full px-16 flex flex-col justify-center items-center text-white;
+    @apply relative h-dvh max-h-fit w-full px-16 py-9 flex flex-col justify-center items-center text-white;
   }
   .hero-image {
-    @apply absolute bg-cover blur-sm;
+    @apply absolute object-cover inset-0 contrast-75 brightness-50;
   }
 
   .hero-image-container {

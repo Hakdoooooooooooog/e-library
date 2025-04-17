@@ -1,9 +1,20 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselIndicators,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import Image from "next/image";
+import { FiArrowRight } from "react-icons/fi";
 
 export default function Home() {
   return (
     <>
-      <section id="home" className="relative section-container p-0">
+      <section id="home" className="section-container p-0">
         <div className="hero-image-container">
           <Image
             priority
@@ -49,6 +60,52 @@ export default function Home() {
             </h3>
           </div>
         </div>
+      </section>
+
+      <section
+        id="library-services"
+        className="section-container justify-start"
+      >
+        <Carousel className="w-full self-start">
+          <CarouselContent className="ml-0">
+            <CarouselItem className="px-4">
+              <Card className="relative size-full min-h-[25rem] text-background dark:text-foreground">
+                <Image
+                  src="/sample.jpg"
+                  alt="Library-services"
+                  fill
+                  sizes="(max-width: 768px) 100%, (max-width: 1200px) 100%, 100%"
+                  className="absolute object-cover rounded-xl contrast-[0.8] brightness-50"
+                />
+                <CardContent className="relative size-full flex flex-col items-center justify-end gap-4 px-28">
+                  <h2 className="text-2xl font-bold self-start">
+                    Library Services
+                  </h2>
+                  <p className="text-lg font-md self-start line-clamp-2">
+                    The General Trias City Public Library offers a wide range of
+                    services to support the educational and informational needs
+                    of the community. Our services include access to a vast
+                    collection of books, e-books, and digital resources, as well
+                    as research assistance. We also provide study spaces,
+                    computer access, and educational programs for all ages. Our
+                    friendly and knowledgeable staff are here to help you find
+                    the information you need and make the most of our resources.
+                  </p>
+                  <Button
+                    variant="ghost"
+                    size={"sm"}
+                    className="self-start text-sm md:text-lg font-semibold cursor-pointer"
+                  >
+                    Learn More <FiArrowRight className="ml-2" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+          <CarouselIndicators />
+        </Carousel>
       </section>
     </>
   );
