@@ -125,7 +125,7 @@
 }
 
 @layer base {
-  * {
+  html {
     @apply box-border m-0 scroll-smooth scroll-mt-8;
   }
   body {
