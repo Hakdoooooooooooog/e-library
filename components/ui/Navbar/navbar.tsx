@@ -205,7 +205,7 @@ const NavbarDropdown = ({ data }: { data: NavbarProps }) => {
   return (
     <div
       className={cn(
-        " bg-blue-950/75 text-background flex  md:hidden flex-col text-center items-center justify-evenly absolute z-999 top-0 right-0 size-dvh max-w-72 shadow-lg rounded-md transition-all duration-350 ease-in-out",
+        " bg-blue-950/75 text-background flex  md:hidden flex-col text-center items-center justify-evenly absolute z-999 top-0 right-0 size-dvh max-w-1/2 shadow-lg rounded-md transition-all duration-350 ease-in-out",
         isOpen ? "translate-x-0" : "translate-x-full opacity-0"
       )}
     >

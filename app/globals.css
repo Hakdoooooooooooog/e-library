@@ -135,17 +135,17 @@
 
 @layer components {
   .section-container {
-    @apply relative [&:has(>:nth-child(3))]:min-h-dvh [&:has(>:nth-child(-n+2))]:max-h-fit w-full px-12 py-16 flex flex-col justify-center items-center text-white gap-4;
+    @apply relative [&:has(>:nth-child(3))]:min-h-dvh [&:has(>:nth-child(-n+2))]:max-h-fit w-full px-4 md:px-12 py-16 flex flex-col justify-center items-center text-white gap-4;
   }
   .hero-image {
     @apply absolute object-cover inset-0 contrast-75 brightness-50;
   }
 
   .hero-image-container {
-    @apply absolute inset-0 size-full overflow-hidden z-1;
+    @apply absolute size-full inset-0  z-1;
   }
   .hero-image-overlay {
-    @apply absolute size-full z-5 opacity-50 inset-0 bg-linear-to-tr from-[rgba(1,_175,_94,_1)] to-[rgba(0,_153,_81,_1)];
+    @apply absolute z-5 opacity-50 inset-0 bg-linear-to-tr from-[rgba(1,_175,_94,_1)] to-[rgba(0,_153,_81,_1)];
     clip-path: var(--hero-overlay-path);
   }
 
