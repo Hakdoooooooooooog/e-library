@@ -1,0 +1,106 @@
+import Image from "next/image";
+import { TripleLineSeparator } from "@/components/ui/separator";
+import { HistoryTimeline } from "./history-timeline";
+
+export function HistorySection() {
+  return (
+    <section className="w-full bg-gray-100 py-12 md:py-16 rounded-md">
+      <div className="container mx-auto px-4 md:px-6 max-w-full">
+        <div className="flex flex-col items-center text-center mb-10">
+          <div className="flex flex-col items-center pb-4">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-800 md:text-4xl">
+              Our Library&apos;s Rich History
+            </h2>
+            <TripleLineSeparator />
+          </div>
+          <p className="max-w-3xl text-muted-foreground">
+            Since 1892, our library has been a cornerstone of knowledge and
+            community gathering in our town. Explore our journey through the
+            decades.
+          </p>
+        </div>
+
+        <div className="grid gap-10 md:gap-16">
+          {/* Historical Introduction */}
+          <div className="grid gap-6 md:grid-cols-2 md:gap-10 items-center">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+              <Image
+                src="https://placehold.co/800x600/gray/white?text=Original+Library+Building"
+                alt="Original library building from 1892"
+                className="object-cover"
+                fill
+                sizes="(max-width: 768px) 100%, (max-width: 1200px) 100%, 100%"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                <p className="text-sm font-medium">
+                  Original library building, circa 1892
+                </p>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-slate-800">
+                The Beginning
+              </h3>
+              <p className="text-slate-700">
+                Our library began as a small reading room with just 200 books,
+                founded by a group of local educators and philanthropists who
+                believed in the power of knowledge to transform lives. The
+                original building was constructed in the Victorian style,
+                featuring ornate woodwork and large windows to provide natural
+                reading light.
+              </p>
+              <p className="text-slate-700">
+                In those early days, the library served as both an educational
+                resource and a community gathering place, hosting lectures,
+                debates, and social events that brought the town together.
+              </p>
+            </div>
+          </div>
+
+          {/* Timeline */}
+          <div className="py-8">
+            <h3 className="text-2xl  font-semibold text-slate-800 text-center mb-8">
+              Key Milestones
+            </h3>
+            <HistoryTimeline />
+          </div>
+
+          {/* Expansion and Renovation */}
+          <div className="grid gap-6 md:grid-cols-2 md:gap-10 items-center">
+            <div className="space-y-4 order-2 md:order-1">
+              <h3 className="text-2xl font-semibold text-slate-800">
+                Modern Expansion
+              </h3>
+              <p className="text-slate-700">
+                In 2005, our library underwent its most significant renovation,
+                expanding to include a dedicated children&apos;s wing, digital
+                media lab, and community meeting spaces. The project carefully
+                preserved the historical elements of our building while
+                incorporating modern amenities and technology.
+              </p>
+              <p className="text-slate-700">
+                Today, our library houses over 500,000 physical items and
+                provides access to millions more through our digital collections
+                and interlibrary loan partnerships.
+              </p>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg order-1 md:order-2">
+              <Image
+                src="https://placehold.co/800x600/gray/white?text=Modern+Library+Building"
+                alt="Modern library building after 2005 renovation"
+                className="object-cover"
+                fill
+                sizes="(max-width: 768px) 100%, (max-width: 1200px) 100%, 100%"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                <p className="text-sm font-medium">
+                  Our library after the 2005 renovation and expansion
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
