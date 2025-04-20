@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
 import "./globals.css";
-
-const robotoFont = Roboto({
-  variable: "--font-roboto-sans",
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "General Trias City Public Library",
@@ -21,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${robotoFont.variable} antialiased`}>{children}</body>
+      <body className="font-serif">{children}</body>
     </html>
   );
 }

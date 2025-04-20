@@ -19,7 +19,7 @@ type NavbarProps = Array<{
 }>;
 
 const data: NavbarProps = [
-  { href: "/", label: "Home" },
+  { href: "#home", label: "Home" },
   {
     href: "#services",
     label: "Services",
