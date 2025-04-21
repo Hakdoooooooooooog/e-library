@@ -13,45 +13,35 @@ type TimelineEvent = {
 
 const timelineEvents: TimelineEvent[] = [
   {
-    year: "1892",
-    title: "Library Founded",
+    year: "2006",
+    title: "Inauguration and Founding Year of General Trias City Library",
     description:
-      "Established with a collection of 200 books in a small Victorian building",
+      "Founded by the Local Government Officials of General Trias City. Inaugurated on April 17, 2006.",
   },
   {
-    year: "1915",
-    title: "First Expansion",
-    description: "Added a dedicated reading room and children's section",
+    year: "2007",
+    title: "Model Municipal Library",
+    description:
+      'Received the special citation for implementing Best Practices on Environment Management as "Model Municipal Library" last September 17, 2007 at the Provincial Capitol, Trece Martirez City.',
   },
   {
-    year: "1942",
-    title: "War Effort",
+    year: "2009",
+    title: "Acquisition of Computer Sets and Internet",
     description:
-      "Served as a community center for war information and rationing",
+      "Expanded its resources by acquiring six complete computer sets with internet connection and free wi-fi access.",
   },
   {
-    year: "1968",
-    title: "Modernization",
+    year: "2012",
+    title:
+      "PRC Board for Librarians and Affiliation with the National Library of the Philippines",
     description:
-      "Major renovation including new technology and expanded collections",
+      "On February 22, 2012, the library passed the evaluation conducted by the PRC Board for Librarians. Followed by affiliation with the National Library of the Philippines on June 13, 2012.",
   },
   {
-    year: "1995",
-    title: "Digital Era Begins",
+    year: "2025",
+    title: "Ongoing provision of Information and Services",
     description:
-      "First computers and internet access made available to the public",
-  },
-  {
-    year: "2005",
-    title: "Major Renovation",
-    description:
-      "Complete building expansion and modernization while preserving historical elements",
-  },
-  {
-    year: "2020",
-    title: "Virtual Services",
-    description:
-      "Expanded digital collections and virtual programming during global pandemic",
+      "The Library of General Trias City continuing providing essential information sources, offering a range of services such as easy computer access, books/materials for obtaining informations, and free wi-fi access to its community.",
   },
 ];
 

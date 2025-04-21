@@ -23,12 +23,6 @@ const data: NavbarProps = [
   {
     href: "#services",
     label: "Services",
-    icon: <RiArrowDownSFill />,
-    submenu: [
-      { href: "#services", label: "Services" },
-      { href: "#library-resources", label: "Library Resources" },
-      { href: "#library-collections", label: "Library Collections" },
-    ],
   },
   {
     href: "#history",
@@ -36,7 +30,7 @@ const data: NavbarProps = [
     icon: <RiArrowDownSFill />,
     submenu: [
       { href: "#history", label: "History" },
-      { href: "#library-timeline", label: "Library Timeline" },
+      { href: "#timeline", label: "Library Timeline" },
     ],
   },
   { href: "#about-us", label: "About Us" },

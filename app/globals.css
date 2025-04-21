@@ -152,4 +152,12 @@
   .hero-content-container {
     @apply absolute size-full z-10 pt-16 px-16 inset-0 grid place-items-center grid-rows-1 gap-8;
   }
+
+  .footer {
+    @apply flex flex-wrap items-start justify-between p-4 bg-blue-900 text-background;
+  }
+
+  .footer-content-container {
+    @apply flex max-w-sm gap-4;
+  }
 }

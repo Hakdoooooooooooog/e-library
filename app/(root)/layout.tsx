@@ -1,3 +1,4 @@
+import Footer from "@/components/ui/footer";
 import Navbar from "@/components/ui/Navbar/navbar";
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
@@ -5,10 +6,11 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
       <Navbar />
       <main
         role="main"
-        className="h-dvh antialiased bg-background text-foreground"
+        className="min-h-dvh antialiased bg-background text-foreground"
       >
         {children}
       </main>
+      <Footer />
     </>
   );
 };

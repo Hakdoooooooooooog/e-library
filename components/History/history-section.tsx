@@ -4,7 +4,7 @@ import { HistoryTimeline } from "./history-timeline";
 
 export function HistorySection() {
   return (
-    <section className="w-full bg-gray-100 py-12 md:py-16 rounded-md">
+    <div className="w-full bg-gray-100 py-12 md:py-16 rounded-md">
       <div className="container mx-auto px-4 md:px-6 max-w-full">
         <div className="flex flex-col items-center text-center mb-10">
           <div className="flex flex-col items-center pb-4">
@@ -14,7 +14,7 @@ export function HistorySection() {
             <TripleLineSeparator />
           </div>
           <p className="max-w-3xl text-muted-foreground">
-            Since 1892, our library has been a cornerstone of knowledge and
+            Since 2006, our library has been a cornerstone of knowledge and
             community gathering in our town. Explore our journey through the
             decades.
           </p>
@@ -33,7 +33,7 @@ export function HistorySection() {
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
                 <p className="text-sm font-medium">
-                  Original library building, circa 1892
+                  Original library building, circa 2006
                 </p>
               </div>
             </div>
@@ -58,14 +58,14 @@ export function HistorySection() {
           </div>
 
           {/* Timeline */}
-          <div className="py-8">
+          <div id="timeline" className="py-8">
             <h3 className="text-2xl  font-semibold text-slate-800 text-center mb-8">
               Key Milestones
             </h3>
             <HistoryTimeline />
           </div>
 
-          {/* Expansion and Renovation */}
+          {/* Expansion and Renovation
           <div className="grid gap-6 md:grid-cols-2 md:gap-10 items-center">
             <div className="space-y-4 order-2 md:order-1">
               <h3 className="text-2xl font-semibold text-slate-800">
@@ -98,9 +98,9 @@ export function HistorySection() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
