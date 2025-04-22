@@ -154,10 +154,6 @@
   }
 
   .footer {
-    @apply flex flex-wrap items-start justify-between p-4 bg-blue-900 text-background;
-  }
-
-  .footer-content-container {
-    @apply flex max-w-sm gap-4;
+    @apply flex flex-wrap items-start justify-evenly p-4 bg-blue-900 text-background;
   }
 }

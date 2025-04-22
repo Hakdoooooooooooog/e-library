@@ -1,11 +1,14 @@
+"use client";
+
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Link from "next/link";
 import { MdMailOutline } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
-type FooterItemsProp = Array<{
+type FooterItemsProp = {
   groupTitle?: string;
   groupLink?: Array<{
     href: string;
@@ -16,9 +19,9 @@ type FooterItemsProp = Array<{
     src: string;
     alt: string;
   };
-}>;
+};
 
-const items: FooterItemsProp = [
+const items: FooterItemsProp[] = [
   {
     groupTitle: undefined,
     groupLink: undefined,
@@ -103,9 +106,9 @@ const Footer = () => {
   return (
     <div className="footer">
       <FooterItems items={items} />
-      <Separator className="py-8" />
-      <div className="flex[1_1_100%] w-full text-center">
-        <p className="text-sm font-bold">
+      <div className=" w-full text-center pt-4">
+        <Separator className="hidden md:block" />
+        <p className="text-xs sm:text-sm font-bold pt-4">
           {" "}
           Copyright &copy; Darenz Hicap :: 2025 City Public Library of General
           Trias :: Province of Cavite.
@@ -115,10 +118,13 @@ const Footer = () => {
   );
 };
 
-const FooterItems = ({ items }: { items: FooterItemsProp }) => {
+const FooterItems = ({ items }: { items: FooterItemsProp[] }) => {
   return items.map((item, index) => {
     return (
-      <div key={`groupLink-${index}`} className="footer-container-content">
+      <div
+        key={`groupLink-${index}`}
+        className="flex w-full sm:w-sm sm:max-w-fit"
+      >
         <FooterItem
           props={{
             groupTitle: item.groupTitle,
@@ -131,27 +137,14 @@ const FooterItems = ({ items }: { items: FooterItemsProp }) => {
   });
 };
 
-const FooterItem = ({
-  props,
-}: {
-  props: {
-    groupTitle?: string;
-    groupLink?: Array<{
-      href: string;
-      label: string;
-      logo?: React.ReactNode;
-    }>;
-    logo?: {
-      src: string;
-      alt: string;
-    };
-  };
-}) => {
+const FooterItem = ({ props }: { props: FooterItemsProp }) => {
   const { groupTitle, groupLink, logo } = props;
+  const isSmall = useMediaQuery("(max-width: 40rem)");
+
   return (
-    <div className="flex w-full h-[15rem] gap-16">
+    <div className="flex flex-col sm:flex-row size-full min-h-[12.5rem] max-h-fit gap-8">
       {logo ? (
-        <div className="relative flex-[1_1_auto] size-40">
+        <div className="relative self-center size-40 md:size-32 flex-[1_1_100%]">
           <Image
             src={logo.src}
             alt={logo.alt}
@@ -160,20 +153,24 @@ const FooterItem = ({
           />
         </div>
       ) : (
-        <div className="flex flex-col gap-4 flex-[1_1_auto]">
+        <div className="flex flex-col w-full gap-4 flex-[1_1_100%]">
           {groupLink && (
             <>
-              <h2 className="text-2xl font-bold pb-4">{groupTitle}</h2>
+              <h2 className="text-lg sm:text-xl font-bold pb-2">
+                {groupTitle}
+              </h2>
 
               {groupLink.map((link, index) => {
                 return (
                   <Link
-                    key={link.label + index}
+                    key={`link-${index}-${link.label}`}
                     href={link.href}
                     className="flex gap-4 items-center w-full"
                   >
                     {link.logo && link.logo}{" "}
-                    <span className="text-sm font-medium">{link.label}</span>
+                    <span className="text-xs sm:text-sm font-medium">
+                      {link.label}
+                    </span>
                   </Link>
                 );
               })}
@@ -182,7 +179,7 @@ const FooterItem = ({
         </div>
       )}
 
-      <Separator orientation="vertical" />
+      <Separator orientation={isSmall ? "horizontal" : "vertical"} />
     </div>
   );
 };

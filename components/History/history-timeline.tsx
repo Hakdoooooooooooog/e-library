@@ -54,7 +54,7 @@ function TimelineItem({
 }) {
   const itemRef = useRef(null);
   const isInView = useInView(itemRef, { once: false, amount: 0.3 });
-  const isSmallScreen = useMediaQuery("(max-width: 768px)");
+  const isSmallScreen = useMediaQuery("(max-width: 40rem)");
 
   // Different animation variants based on screen size
   const contentVariants: Variants = {
@@ -88,15 +88,15 @@ function TimelineItem({
     <div
       ref={itemRef}
       className={cn(
-        "relative grid grid-cols-1 gap-4 md:grid-cols-2 w-full",
-        index % 2 === 0 ? "md:text-right" : ""
+        "relative grid grid-cols-1 gap-4 sm:grid-cols-2 w-full",
+        index % 2 === 0 ? "sm:text-right" : ""
       )}
     >
       {/* Year marker for desktop */}
       <motion.div
         className={cn(
-          "absolute left-1/2 top-0 h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border-4 border-green-100 bg-blue-500 text-white shadow hidden md:flex",
-          "md:top-4"
+          "absolute left-1/2 top-0 h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border-4 border-green-100 bg-blue-500 text-white shadow hidden sm:flex",
+          "sm:top-4"
         )}
         initial={{ scale: 0, opacity: 0 }}
         animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
@@ -116,16 +116,16 @@ function TimelineItem({
       {/* Content positioning */}
       <div
         className={cn(
-          "md:col-span-1",
+          "sm:col-span-1",
           isSmallScreen
             ? "pl-4 ml-1"
             : index % 2 === 0
-            ? "md:text-right md:pr-12"
-            : "md:col-start-2 md:pl-12"
+            ? "sm:text-right sm:pr-12"
+            : "sm:col-start-2 sm:pl-12"
         )}
       >
         <motion.div
-          className="rounded-lg bg-white p-4 shadow-md overflow-hidden"
+          className="rounded-lg bg-white p-4 shadow-sm overflow-hidden"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={contentVariants}
@@ -144,8 +144,8 @@ function TimelineItem({
       {!isSmallScreen && (
         <div
           className={cn(
-            "hidden md:block md:col-span-1",
-            index % 2 === 0 ? "md:col-start-2" : ""
+            "hidden sm:block sm:col-span-1",
+            index % 2 === 0 ? "sm:col-start-2" : ""
           )}
         />
       )}
@@ -156,7 +156,7 @@ function TimelineItem({
 export function HistoryTimeline() {
   const timelineRef = useRef(null);
   const isTimelineInView = useInView(timelineRef, { once: false, amount: 0.1 });
-  const isSmallScreen = useMediaQuery("(max-width: 768px)");
+  const isSmallScreen = useMediaQuery("(max-width: 40rem)");
 
   return (
     <div className="relative w-full overflow-hidden py-8" ref={timelineRef}>
