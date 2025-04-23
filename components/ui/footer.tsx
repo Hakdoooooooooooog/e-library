@@ -106,7 +106,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <FooterItems items={items} />
-      <div className=" w-full text-center pt-4">
+      <div className="text-center pt-4 col-span-full">
         <Separator className="hidden md:block" />
         <p className="text-xs sm:text-sm font-bold pt-4">
           {" "}
@@ -121,10 +121,7 @@ const Footer = () => {
 const FooterItems = ({ items }: { items: FooterItemsProp[] }) => {
   return items.map((item, index) => {
     return (
-      <div
-        key={`groupLink-${index}`}
-        className="flex w-full sm:w-sm sm:max-w-fit"
-      >
+      <div key={`groupLink-${index}`} className="w-full">
         <FooterItem
           props={{
             groupTitle: item.groupTitle,
@@ -142,9 +139,9 @@ const FooterItem = ({ props }: { props: FooterItemsProp }) => {
   const isSmall = useMediaQuery("(max-width: 40rem)");
 
   return (
-    <div className="flex flex-col sm:flex-row size-full min-h-[12.5rem] max-h-fit gap-8">
+    <div className="flex flex-col sm:flex-row justify-evenly h-[15rem] max-sm:min-h-[10rem] max-h-fit">
       {logo ? (
-        <div className="relative self-center size-40 md:size-32 flex-[1_1_100%]">
+        <div className="relative self-center m-[auto_auto] size-40 md:size-32 max-sm:mb-6">
           <Image
             src={logo.src}
             alt={logo.alt}
@@ -153,7 +150,7 @@ const FooterItem = ({ props }: { props: FooterItemsProp }) => {
           />
         </div>
       ) : (
-        <div className="flex flex-col w-full gap-4 flex-[1_1_100%]">
+        <div className="flex flex-col size-full justify-center gap-4">
           {groupLink && (
             <>
               <h2 className="text-lg sm:text-xl font-bold pb-2">
@@ -165,9 +162,13 @@ const FooterItem = ({ props }: { props: FooterItemsProp }) => {
                   <Link
                     key={`link-${index}-${link.label}`}
                     href={link.href}
-                    className="flex gap-4 items-center w-full"
+                    className="flex items-center w-full"
                   >
-                    {link.logo && link.logo}{" "}
+                    {link.logo && (
+                      <span className="text-xs sm:text-sm mr-4">
+                        {link.logo}
+                      </span>
+                    )}
                     <span className="text-xs sm:text-sm font-medium">
                       {link.label}
                     </span>
