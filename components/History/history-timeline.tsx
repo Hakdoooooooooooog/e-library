@@ -41,7 +41,7 @@ const timelineEvents: TimelineEvent[] = [
     year: "2025",
     title: "Ongoing provision of Information and Services",
     description:
-      "The Library of General Trias City continuing providing essential information sources, offering a range of services such as easy computer access, books/materials for obtaining informations, and free wi-fi access to its community.",
+      "The Public City Library of General Trias continuing providing essential information sources, offering a range of services such as easy computer access, books/materials for obtaining informations, and free wi-fi access to its community.",
   },
 ];
 

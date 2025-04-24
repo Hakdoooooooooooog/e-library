@@ -33,7 +33,7 @@ export function HistorySection() {
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
                 <p className="text-sm font-medium">
-                  Original library building, circa 2006
+                  The Library building, circa 2006
                 </p>
               </div>
             </div>
@@ -43,16 +43,12 @@ export function HistorySection() {
               </h3>
               <p className="text-slate-700">
                 Our library began as a small reading room with just 200 books,
-                founded by a group of local educators and philanthropists who
-                believed in the power of knowledge to transform lives. The
-                original building was constructed in the Victorian style,
-                featuring ornate woodwork and large windows to provide natural
-                reading light.
+                founded by the Local Government Officials by General Trias City.
               </p>
               <p className="text-slate-700">
-                In those early days, the library served as both an educational
-                resource and a community gathering place, hosting lectures,
-                debates, and social events that brought the town together.
+                The library served as both an educational resource and a
+                community gathering place, hosting lectures, debates, and social
+                events that brought the town together.
               </p>
             </div>
           </div>
