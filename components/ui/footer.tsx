@@ -139,7 +139,7 @@ const FooterItem = ({ props }: { props: FooterItemsProp }) => {
   const isSmall = useMediaQuery("(max-width: 40rem)");
 
   return (
-    <div className="flex flex-col sm:flex-row justify-evenly h-[15rem] max-sm:min-h-[10rem] max-h-fit">
+    <div className="flex flex-col sm:flex-row justify-between h-[20rem] max-sm:min-h-[10rem] md:min-h-[15rem] ">
       {logo ? (
         <div className="relative self-center m-[auto_auto] size-40 md:size-32 max-sm:mb-6">
           <Image
@@ -150,7 +150,7 @@ const FooterItem = ({ props }: { props: FooterItemsProp }) => {
           />
         </div>
       ) : (
-        <div className="flex flex-col size-full justify-center gap-4">
+        <div className="flex flex-col size-full justify-betwen gap-4 p-4">
           {groupLink && (
             <>
               <h2 className="text-lg sm:text-xl font-bold pb-2">

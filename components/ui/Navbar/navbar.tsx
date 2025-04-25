@@ -33,7 +33,15 @@ const data: NavbarProps = [
       { href: "#timeline", label: "Library Timeline" },
     ],
   },
-  { href: "#about-us", label: "About Us" },
+  {
+    href: "#about-us",
+    label: "About Us",
+    icon: <RiArrowDownSFill />,
+    submenu: [
+      { href: "#about-us", label: "About Us" },
+      { href: "#vision-mission", label: "Our Vision and Mission" },
+    ],
+  },
   { href: "#contact-us", label: "Contact Us" },
 ];
 
