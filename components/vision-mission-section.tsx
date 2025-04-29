@@ -42,7 +42,7 @@ const VisionMissionSection = () => {
         </h2>
         <TripleLineSeparator />
       </div>
-      <div className="w-full flex flex-wrap justify-evenly">
+      <div className="w-full flex flex-wrap justify-around gap-y-8">
         <VisionMissionItems items={items} />
       </div>
     </>
@@ -67,10 +67,12 @@ const VisionMissionItem = ({
 }) => {
   const { title, description, descriptionLists } = item;
   return (
-    <Card className="flex[1_1_100%] w-full h-[30rem] md:h-[28rem] lg:h-[25rem] max-w-md md:max-w-xs flex flex-col gap-4">
+    <Card className="flex[1_1_100%] w-full h-fit sm:h-[25rem] lg:h-[23rem] max-w-md sm:max-w-xs flex flex-col gap- bg-gradient-to-tl bg-blue-400">
       <CardHeader>
         <CardTitle className="text-lg font-bold">{title}</CardTitle>
-        <CardDescription className="text-md">{description}</CardDescription>
+        <CardDescription className="text-md text-muted">
+          {description}
+        </CardDescription>
       </CardHeader>
       {descriptionLists &&
         descriptionLists.map((descItem, index) => {

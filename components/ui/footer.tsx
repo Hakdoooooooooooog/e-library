@@ -141,7 +141,7 @@ const FooterItem = ({ props }: { props: FooterItemsProp }) => {
   return (
     <div className="flex flex-col sm:flex-row justify-between h-[20rem] max-sm:min-h-[10rem] md:min-h-[15rem] ">
       {logo ? (
-        <div className="relative self-center m-[auto_auto] size-40 md:size-32 max-sm:mb-6">
+        <div className="relative self-center m-[auto_auto] size-40 md:size-24 lg:size-32">
           <Image
             src={logo.src}
             alt={logo.alt}
@@ -150,7 +150,7 @@ const FooterItem = ({ props }: { props: FooterItemsProp }) => {
           />
         </div>
       ) : (
-        <div className="flex flex-col size-full justify-betwen gap-4 p-4">
+        <div className="flex flex-col size-full justify-between gap-4 p-4">
           {groupLink && (
             <>
               <h2 className="text-lg sm:text-xl font-bold pb-2">
