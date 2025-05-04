@@ -157,24 +157,21 @@ const FooterItem = ({ props }: { props: FooterItemsProp }) => {
                 {groupTitle}
               </h2>
 
-              {groupLink.map((link, index) => {
-                return (
-                  <Link
-                    key={`link-${index}-${link.label}`}
-                    href={link.href}
-                    className="flex items-center w-full"
-                  >
-                    {link.logo && (
-                      <span className="text-xs sm:text-sm mr-4">
-                        {link.logo}
-                      </span>
-                    )}
-                    <span className="text-xs sm:text-sm font-medium">
-                      {link.label}
-                    </span>
-                  </Link>
-                );
-              })}
+              {groupLink.map((link, index) => (
+                <Link
+                  key={`link-${index}-${link.label}`}
+                  href={link.href}
+                  className="flex items-center w-full relative group"
+                >
+                  {link.logo && (
+                    <span className="text-xs sm:text-sm mr-4">{link.logo}</span>
+                  )}
+                  <span className="text-xs sm:text-sm font-medium">
+                    {link.label}
+                  </span>
+                  <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-current transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100" />
+                </Link>
+              ))}
             </>
           )}
         </div>
