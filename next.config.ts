@@ -16,10 +16,5 @@ const nextConfig: NextConfig = {
   },
 };
 
-// const withBundleAnalyzer = bundleAnalyzer({
-//   enabled: process.env.ANALYZE === "true",
-// });
-
-// module.exports = withBundleAnalyzer(nextConfig);
-
+// (Removed unused commented-out bundle analyzer code)
 export default nextConfig;
