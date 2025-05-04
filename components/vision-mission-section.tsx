@@ -38,7 +38,7 @@ const VisionMissionSection = () => {
     <>
       <div className=" flex flex-col items-center pb-4">
         <h2 className="text-3xl font-bold tracking-tight text-slate-800 md:text-4xl">
-          Our Library&apos;s Vision & Mission
+          Vision & Mission
         </h2>
         <TripleLineSeparator />
       </div>
@@ -60,16 +60,20 @@ const VisionMissionItems = ({ items }: { items: VisionMissionProps[] }) => {
   });
 };
 
-const VisionMissionItem = ({
-  item,
-}: {
-  item: Omit<VisionMissionProps, "id">;
-}) => {
+const VisionMissionItem = ({ item }: { item: VisionMissionProps }) => {
   const { title, description, descriptionLists } = item;
   return (
-    <Card className="flex[1_1_100%] w-full h-fit sm:h-[25rem] lg:h-[23rem] max-w-md sm:max-w-xs flex flex-col gap- bg-gradient-to-tl bg-blue-400">
+    <Card
+      className={`flex[1_1_100%] w-full h-fit sm:h-[24rem] max-w-md flex flex-col shadow-md border border-slate-300 rounded-lg p-4 ${
+        item.id % 2 === 0
+          ? "bg-gradient-to-tr from-blue-300 to-blue-500"
+          : "bg-gradient-to-tr from-green-300 to-green-500"
+      }`}
+    >
       <CardHeader>
-        <CardTitle className="text-lg font-bold">{title}</CardTitle>
+        <CardTitle className="text-2xl font-bold text-slate-700">
+          {title}
+        </CardTitle>
         <CardDescription className="text-md text-muted">
           {description}
         </CardDescription>
@@ -81,8 +85,10 @@ const VisionMissionItem = ({
               key={`list-${title}-${index}`}
               className="w-full flex flex-col gap-4"
             >
-              <ul className="text-sm font-medium">
-                <li>{descItem}</li>
+              <ul className="text-justify list-disc list-inside">
+                <li>
+                  <span className="text-sm font-normal">{descItem}</span>
+                </li>
               </ul>
             </CardContent>
           );

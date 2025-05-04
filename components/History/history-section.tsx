@@ -14,16 +14,16 @@ export function HistorySection() {
             <TripleLineSeparator />
           </div>
           <p className="max-w-3xl text-muted-foreground">
-            Since 2006, our library has been a cornerstone of knowledge and
-            community gathering in our town. Explore our journey through the
-            decades.
+            From our humble beginnings in 2006, our library has grown into a
+            vibrant hub of learning, innovation, and community connection. Join
+            us as we look back at our remarkable journey.
           </p>
         </div>
 
         <div className="grid gap-10 md:gap-16">
           {/* Historical Introduction */}
           <div className="grid gap-6 md:grid-cols-2 md:gap-10 items-center">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+            <div className="relative aspect-[4/3] overflow-hidden shadow-lg">
               <Image
                 src="https://placehold.co/800x600/gray/white?text=Original+Library+Building"
                 alt="Original library building from 1892"
@@ -39,16 +39,18 @@ export function HistorySection() {
             </div>
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold text-slate-800">
-                The Beginning
+                Our Foundation
               </h3>
               <p className="text-slate-700">
-                Our library began as a small reading room with just 200 books,
-                founded by the Local Government Officials by General Trias City.
+                Established in 2006, our library started with a modest
+                collection of 1,000 books in a small facility within General
+                Trias City, driven by the vision of local government leaders.
               </p>
               <p className="text-slate-700">
-                The library served as both an educational resource and a
-                community gathering place, hosting lectures, debates, and social
-                events that brought the town together.
+                Since then, we&apos;ve grown to become a vital educational hub,
+                fostering learning through various programs, digital resources,
+                and community initiatives that continue to enrich our
+                city&apos;s cultural landscape.
               </p>
             </div>
           </div>
