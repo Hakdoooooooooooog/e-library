@@ -12,23 +12,33 @@ const AboutUs = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-10 md:gap-16 w-full">
         {Array.from({ length: 6 }, (_, index) => (
-          <AboutUsCard key={`about-us-card-${index}`} />
+          <AboutUsCard
+            key={`about-us-card-${index}`}
+            librarianName="John Doe"
+            designation="Librarian I"
+          />
         ))}
       </div>
     </>
   );
 };
 
-const AboutUsCard = () => {
+const AboutUsCard = ({
+  librarianName,
+  designation,
+}: {
+  librarianName: string;
+  designation: string;
+}) => {
   return (
     <div className="relative size-60 md:size-72 overflow-hidden  bg-white transition-transform duration-300 ease-in-out hover:scale-105">
       <AboutUsCardContent>
         <div className=" flex flex-col items-center text-center overflow-hidden">
           <AboutUsCardImage />
         </div>
-        <div className="w-full flex flex-col items-center text-center text-gray-800 mt-4">
-          <h2 className="text-lg font-bold">Librarian name</h2>
-          <p className="text-sm text-muted-foreground">Librarian title</p>
+        <div className="w-full flex flex-col items-center text-center text-white mt-4">
+          <h2 className="text-lg font-bold">{librarianName}</h2>
+          <p className="text-sm text-muted-foreground">{designation}</p>
         </div>
       </AboutUsCardContent>
     </div>
@@ -39,7 +49,7 @@ const AboutUsCardContent = ({
   children,
 }: Readonly<{ children: React.ReactNode }>) => {
   return (
-    <div className="absolute bottom-0 left-0 flex items-center justify-center  rounded-full w-full h-fit p-4 bg-gradient-to-tr from-green-300 to-green-800">
+    <div className="absolute bottom-0 left-0 flex items-center justify-center rounded-full w-full h-fit p-4 bg-gradient-to-tr from-green-300 to-green-800">
       {children}
     </div>
   );
@@ -52,17 +62,17 @@ const AboutUsCardImage = () => {
         <Image
           src="https://placehold.co/800x600/gray/white?text=placeholder+librarian+image"
           alt="Placeholder librarian image"
-          className="rounded-full object-cover"
+          className="rounded-2xl object-cover"
           fill
           sizes="(max-width: 768px) 9rem,  9rem"
         />
       </div>
       {/* Reflection */}
-      <div className="absolute size-36 -top-12 left-1/2 -translate-1/2 mt-36 ">
+      <div className="absolute size-36 -top-12 left-1/2 -translate-1/2 mt-36">
         <Image
           src="https://placehold.co/800x600/gray/white?text=placeholder+librarian+image"
           alt="Reflection"
-          className="rounded-full object-cover opacity-20 rotate-180 scale-y-[-1]"
+          className="rounded-2xl object-cover opacity-20 rotate-180 scale-y-[-1] mt-8"
           fill
           sizes="(max-width: 768px) 9rem,  9rem"
         />
