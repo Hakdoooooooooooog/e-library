@@ -25,8 +25,8 @@ export function HistorySection() {
           <div className="grid gap-6 md:grid-cols-2 md:gap-10 items-center">
             <div className="relative aspect-[4/3] overflow-hidden shadow-lg">
               <Image
-                src="https://placehold.co/800x600/gray/white?text=Original+Library+Building"
-                alt="Original library building from 1892"
+                src="/og-library-img.jpeg"
+                alt="Original library building from 2006"
                 className="object-cover"
                 fill
                 sizes="(max-width: 768px) 100%, (max-width: 1200px) 100%, 100%"

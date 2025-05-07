@@ -66,8 +66,8 @@ const VisionMissionItem = ({ item }: { item: VisionMissionProps }) => {
     <Card
       className={`flex[1_1_100%] w-full h-fit sm:h-[24rem] max-w-md flex flex-col shadow-md border border-slate-300 rounded-lg p-4 ${
         item.id % 2 === 0
-          ? "bg-gradient-to-tr from-blue-300 to-blue-500"
-          : "bg-gradient-to-tr from-green-300 to-green-500"
+          ? "bg-gradient-to-tr from-blue-400 to-blue-600"
+          : "bg-gradient-to-tr from-green-400 to-green-600"
       }`}
     >
       <CardHeader>
