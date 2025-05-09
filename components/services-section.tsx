@@ -11,12 +11,14 @@ import {
   CarouselIndicators,
 } from "./ui/carousel";
 import { TripleLineSeparator } from "./ui/separator";
+import Link from "next/link";
 
 type CarouselItemProps = {
   id: number;
   title: string;
   description: string;
   image: string;
+  link: string;
 };
 
 const CarouselItems: CarouselItemProps[] = [
@@ -26,6 +28,7 @@ const CarouselItems: CarouselItemProps[] = [
     description:
       "The General Trias City Public Library provides comprehensive services including books, e-books, digital resources, and research assistance. We offer study spaces, computer access, and educational programs, supported by our dedicated staff.",
     image: "/service-1.jpeg",
+    link: "",
   },
   {
     id: 2,
@@ -33,8 +36,20 @@ const CarouselItems: CarouselItemProps[] = [
     description:
       "The General Trias City Public Library provides comprehensive services including books, e-books, digital resources, and research assistance. We offer study spaces, computer access, and educational programs, supported by our dedicated staff.",
     image: "/service-2.jpeg",
+    link: "",
   },
 ];
+
+const formattedCarouselItems = (CarouselItems: CarouselItemProps[]) => {
+  const result = CarouselItems.map((item) => {
+    return {
+      ...item,
+      link: `${item.title.toLowerCase().replace(/\s/g, "-")}`,
+    };
+  });
+
+  return result;
+};
 
 const ServicesSection = () => {
   return (
@@ -54,7 +69,7 @@ const ServicesSection = () => {
       </div>
       <Carousel className="w-full self-start">
         <CarouselContent className="ml-0">
-          {CarouselItems.map((carouseItem) => (
+          {formattedCarouselItems(CarouselItems).map((carouseItem) => (
             <ServiceSectionItem
               key={`carousel-${carouseItem.id}-${carouseItem.title}`}
               carouseItem={carouseItem}
@@ -72,7 +87,7 @@ const ServicesSection = () => {
 const ServiceSectionItem = (carouseItem: {
   carouseItem: CarouselItemProps;
 }) => {
-  const { title, description, image: imgSrc } = carouseItem.carouseItem;
+  const { title, description, image: imgSrc, link } = carouseItem.carouseItem;
 
   return (
     <CarouselItem className="px-4">
@@ -81,7 +96,7 @@ const ServiceSectionItem = (carouseItem: {
           src={imgSrc}
           alt="Library-services"
           fill
-          sizes="(max-width: 768px) 100%, (max-width: 1200px) 100%, 100%"
+          sizes="(max-width: 768px) 100%, 100%"
           className="absolute object-cover rounded-xl contrast-[0.8] brightness-80"
         />
         <CardContent className="relative size-full flex flex-col items-center justify-end gap-4">
@@ -93,13 +108,16 @@ const ServiceSectionItem = (carouseItem: {
               {description}
             </p>
 
-            <Button
-              variant="ghost"
-              size={"sm"}
-              className="self-start text-sm md:text-lg font-medium cursor-pointer"
-            >
-              Learn More <FiArrowRight className="ml-2" />
-            </Button>
+            <Link className="self-start" href={link}>
+              <Button
+                variant="ghost"
+                size={"sm"}
+                className="text-sm md:text-lg font-medium cursor-pointer"
+              >
+                Learn More{" "}
+                <FiArrowRight className="hidden sm:inline-block ml-2" />
+              </Button>
+            </Link>
           </div>
           <div className="absolute size-full max-h-1/2  bottom-0 bg-gradient-to-t from-black/80 to-transparent rounded-b-xl" />
         </CardContent>

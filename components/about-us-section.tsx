@@ -72,7 +72,7 @@ const AboutUsCardImage = () => {
         <Image
           src="https://placehold.co/800x600/gray/white?text=placeholder+librarian+image"
           alt="Reflection"
-          className="rounded-2xl object-cover opacity-20 rotate-180 scale-y-[-1] mt-8"
+          className="rounded-2xl object-cover opacity-20 rotate-180 scale-y-[-1] mt-4"
           fill
           sizes="(max-width: 768px) 9rem,  9rem"
         />
