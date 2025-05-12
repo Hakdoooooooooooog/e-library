@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { HTMLAttributes, useState } from "react";
 import { cn } from "@/lib/utils";
-import { useNavbarStore } from "./store";
+import { useNavbarStore } from "./lib/store";
 
 type NavbarProps = Array<{
   href: string;
