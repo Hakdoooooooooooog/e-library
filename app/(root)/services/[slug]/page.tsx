@@ -4,7 +4,7 @@ const TestSlowComponent = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve("Slow component loaded");
-    }, 6000);
+    }, 4000);
   });
 };
 
