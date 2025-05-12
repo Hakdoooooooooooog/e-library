@@ -46,7 +46,7 @@ const data: NavbarProps = [
 ];
 
 const navbarVariant = cva(
-  "flex fixed z-[999] top-0 left-0 w-full items-center justify-between h-16 px-12 sm:px-16 md:px-24 bg-blue-800/85 dark:bg-blue-950/85 shadow-[0_1.5rem_1.5rem_rgba(0,0,255,0.25)]",
+  "flex fixed z-[998] top-0 left-0 w-full items-center justify-between h-16 px-12 sm:px-16 md:px-24 bg-blue-800/85 dark:bg-blue-950/85 shadow-[0_1.5rem_1.5rem_rgba(0,0,255,0.25)]",
   {
     variants: {
       variant: {

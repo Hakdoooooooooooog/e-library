@@ -3,7 +3,7 @@ import Image from "next/image";
 const AboutUsCardImage = () => {
   return (
     <>
-      <div className="absolute size-36 rounded-full -top-12 left-1/2 -translate-1/2">
+      <div className="absolute size-36 rounded-full -top-12 left-1/2 -translate-1/2 pointer-events-none">
         <Image
           src="https://placehold.co/800x600/gray/white?text=placeholder+librarian+image"
           alt="Placeholder librarian image"
@@ -13,7 +13,7 @@ const AboutUsCardImage = () => {
         />
       </div>
       {/* Reflection */}
-      <div className="absolute size-36 -top-12 left-1/2 -translate-1/2 mt-36">
+      <div className="absolute size-36 -top-12 left-1/2 -translate-1/2 mt-36 pointer-events-none">
         <Image
           src="https://placehold.co/800x600/gray/white?text=placeholder+librarian+image"
           alt="Reflection"
