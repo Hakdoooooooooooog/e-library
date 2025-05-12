@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
-import { Button } from "../ui/button";
-import { Card, CardContent } from "../ui/card";
-import { CarouselItem } from "../ui/carousel";
+import { Button } from "../UI/button";
+import { Card, CardContent } from "../UI/card";
+import { CarouselItem } from "../UI/carousel";
 import { CarouselItemProps } from "@/lib/types";
 import Image from "next/image";
 

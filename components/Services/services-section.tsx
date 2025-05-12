@@ -4,8 +4,8 @@ import {
   CarouselPrevious,
   CarouselNext,
   CarouselIndicators,
-} from "../ui/carousel";
-import { TripleLineSeparator } from "../ui/separator";
+} from "../UI/carousel";
+import { TripleLineSeparator } from "../UI/separator";
 import ServicesItems from "./services-items";
 
 const ServicesSection = () => {

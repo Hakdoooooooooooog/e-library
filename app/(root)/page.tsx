@@ -1,8 +1,8 @@
-import AboutUs from "@/components/about-us-section";
-import HeroSection from "@/components/hero-section";
+import AboutUs from "@/components/About/about-us-section";
+import HeroSection from "@/components/Hero/hero-section";
 import { HistorySection } from "@/components/History/history-section";
 import ServicesSection from "@/components/Services/services-section";
-import VisionMissionSection from "@/components/vision-mission-section";
+import VisionMissionSection from "@/components/Vision & Mission/vision-mission-section";
 
 export default function Home() {
   return (

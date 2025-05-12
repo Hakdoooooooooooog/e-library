@@ -5,3 +5,10 @@ export type CarouselItemProps = {
   image: string;
   link: string;
 };
+
+export type VisionMissionProps = {
+  id: number;
+  title: string;
+  description: string;
+  descriptionLists?: Array<string> | undefined;
+};

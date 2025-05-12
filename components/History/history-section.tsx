@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TripleLineSeparator } from "@/components/ui/separator";
+import { TripleLineSeparator } from "@/components/UI/separator";
 import { HistoryTimeline } from "./history-timeline";
 
 export function HistorySection() {

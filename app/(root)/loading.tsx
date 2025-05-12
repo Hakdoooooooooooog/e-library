@@ -1,4 +1,4 @@
-import LoadingScreen from "@/components/ui/loading";
+import LoadingScreen from "@/components/UI/loading";
 import { AnimatePresence } from "framer-motion";
 
 export default function Loading() {

@@ -1,6 +1,6 @@
 "use client";
 
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/components/UI/separator";
 import Image from "next/image";
 import Link from "next/link";
 import { MdMailOutline } from "react-icons/md";
