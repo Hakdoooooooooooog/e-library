@@ -1,10 +1,10 @@
 import AboutUs from "@/components/about-us-section";
 import HeroSection from "@/components/hero-section";
 import { HistorySection } from "@/components/History/history-section";
-import ServicesSection from "@/components/services-section";
+import ServicesSection from "@/components/Services/services-section";
 import VisionMissionSection from "@/components/vision-mission-section";
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <section id="home" className="section-container p-0">

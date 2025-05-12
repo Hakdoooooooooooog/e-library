@@ -57,15 +57,21 @@ const LoadingScreen = () => {
           className="absolute h-16 w-16 rounded-full bg-gradient-to-tr from-emerald-200 to-sky-200"
         />
 
-        {/* Loading text */}
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="absolute -bottom-12 text-lg font-medium text-slate-600"
-        >
-          Loading...
-        </motion.span>
+        {/* Inner circle - dark loading pulse */}
+        <motion.div
+          initial={{ scale: 0.5, opacity: 0.5 }}
+          animate={{
+            scale: 1,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          className="absolute h-12 w-12 rounded-full bg-gradient-to-tr from-emerald-400 to-sky-500"
+        />
       </div>
     </motion.div>
   );
