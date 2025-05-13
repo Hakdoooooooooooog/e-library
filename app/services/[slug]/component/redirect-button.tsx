@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/components/UI/button";
+import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 const RedirectButton = () => {

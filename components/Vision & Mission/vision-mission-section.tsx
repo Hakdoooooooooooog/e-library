@@ -1,5 +1,5 @@
 import { visionMissionData } from "@/lib/const";
-import { TripleLineSeparator } from "../UI/separator";
+import { TripleLineSeparator } from "@/components/ui/separator";
 import VisionMissionItems from "./vision-mission-items";
 
 const VisionMissionSection = () => {

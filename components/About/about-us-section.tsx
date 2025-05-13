@@ -1,4 +1,4 @@
-import { TripleLineSeparator } from "../UI/separator";
+import { TripleLineSeparator } from "@/components/ui/separator";
 import AboutUsCard from "./librarian-card";
 
 const AboutUs = () => {

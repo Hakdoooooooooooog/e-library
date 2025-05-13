@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { TripleLineSeparator } from "@/components/UI/separator";
+import { TripleLineSeparator } from "@/components/ui/separator";
 import { HistoryTimeline } from "./history-timeline";
 
-export function HistorySection() {
+const HistorySection = () => {
   return (
     <div className="w-full bg-gray-100 py-12 md:py-16 rounded-md">
       <div className="container mx-auto px-4 md:px-6 max-w-full">
@@ -101,4 +101,6 @@ export function HistorySection() {
       </div>
     </div>
   );
-}
+};
+
+export default HistorySection;

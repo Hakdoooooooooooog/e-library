@@ -5,7 +5,7 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
-} from "../UI/card";
+} from "@/components/ui/card";
 
 const VisionMissionItem = ({ data }: { data: VisionMissionProps }) => {
   const { title, description, descriptionLists } = data;
