@@ -13,7 +13,7 @@ export default function Home() {
 
       <section
         id="services"
-        className="section-container justify-start max-sm:p-8"
+        className="section-container justify-start p-8 max-sm:p-0"
       >
         <ServicesSection />
       </section>

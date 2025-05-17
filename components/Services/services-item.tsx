@@ -12,14 +12,14 @@ const ServiceSectionItem = (carouseItem: {
   const { title, description, image: imgSrc, link } = carouseItem.carouseItem;
 
   return (
-    <CarouselItem className="px-4">
+    <CarouselItem className="px-4 max-sm:px-0">
       <Card className="relative size-full min-h-[25rem] text-background dark:text-foreground p-0">
         <Image
           src={imgSrc}
           alt="Library-services"
           fill
           sizes="(max-width: 768px) 100%, 100%"
-          className="absolute object-cover rounded-xl contrast-[0.8] brightness-80"
+          className="absolute object-cover min-sm:rounded-xl contrast-[0.8] brightness-80"
         />
         <CardContent className="relative size-full flex flex-col items-center justify-end gap-4">
           <div className="absolute z-10 inset-0 size-full flex flex-col items-end justify-end px-16 md:px-20 xl:px-24 py-8 gap-4">
@@ -41,7 +41,7 @@ const ServiceSectionItem = (carouseItem: {
               </Button>
             </Link>
           </div>
-          <div className="absolute size-full max-h-1/2  bottom-0 bg-gradient-to-t from-black/80 to-transparent rounded-b-xl" />
+          <div className="absolute size-full max-h-1/2  bottom-0 bg-gradient-to-t from-black/80 to-transparent min-sm:rounded-b-xl" />
         </CardContent>
       </Card>
     </CarouselItem>
