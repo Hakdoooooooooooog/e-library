@@ -3,6 +3,7 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { RiArrowDownSFill } from "react-icons/ri";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { HTMLAttributes, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -78,7 +79,7 @@ const Navbar = ({
 
 const NavbarLinks = ({ data }: { data: NavbarProps }) => {
   const { isOpen, setIsOpen } = useNavbarStore(["isOpen", "setIsOpen"]);
-
+  const pathname = usePathname();
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -105,37 +106,39 @@ const NavbarLinks = ({ data }: { data: NavbarProps }) => {
         </div>
       </div>
 
-      <div onMouseLeave={() => setIsOpen(false)} className="flex md:hidden">
-        <button
-          onClick={toggleDropdown}
-          className="p-2 text-inherit rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 cursor-pointer hover:bg-gray-200/50 transition-colors duration-300 ease-in-out"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-6 h-6"
+      {pathname === "/services" && (
+        <div onMouseLeave={() => setIsOpen(false)} className="flex md:hidden">
+          <button
+            onClick={toggleDropdown}
+            className="p-2 text-inherit rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 cursor-pointer hover:bg-gray-200/50 transition-colors duration-300 ease-in-out"
           >
-            {isOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            )}
-          </svg>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              {isOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              )}
+            </svg>
+          </button>
 
-        <NavbarDropdown data={data} />
-      </div>
+          <NavbarDropdown data={data} />
+        </div>
+      )}
     </>
   );
 };
@@ -148,6 +151,13 @@ const NavbarLink = ({
   className?: HTMLAttributes<HTMLElement>["className"];
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const pathname = usePathname();
+  const isServicesPage = pathname.startsWith("/services");
+
+  // Skip navigation items that should only show on the services page
+  if (link.href.startsWith("#") && isServicesPage) {
+    return null;
+  }
 
   const handleMouseEnter = () => {
     if (link.submenu) {

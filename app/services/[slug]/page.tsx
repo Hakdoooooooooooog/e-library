@@ -3,12 +3,15 @@ import { services } from "@/lib/services";
 import { notFound } from "next/navigation";
 import ServicesDescription from "./component/services-description";
 import ServicesGuidelines from "./component/services-guidelines";
+import { Metadata, ResolvingMetadata } from "next";
+import BackButton from "./component/back-button";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+  parent: ResolvingMetadata;
+}): Promise<Metadata> {
   const { slug } = await params;
 
   const service = services.find((s) => s.slug === slug);
@@ -50,6 +53,7 @@ export default async function Services({
     <div className="min-h-screen w-full py-24 px-4 md:px-8 lg:px-16">
       {/* Hero Section */}
       <div className="relative w-full h-[40vh] mb-16 rounded-2xl overflow-hidden">
+        <BackButton />
         <Image
           src={service.heroImage}
           alt={service.title}
