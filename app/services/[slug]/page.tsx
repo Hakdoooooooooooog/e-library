@@ -17,8 +17,12 @@ export async function generateMetadata({
     return {};
   }
 
+  if (!process.env.NEXT_PUBLIC_BASE_URL) {
+    throw new Error("NEXT_PUBLIC_BASE_URL is not defined");
+  }
+
   return {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || ""),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL),
     title: service.title,
     description: service.subtitle,
     openGraph: {
