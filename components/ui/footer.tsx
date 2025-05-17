@@ -124,7 +124,7 @@ const Footer = () => {
 const FooterItems = ({ items }: { items: FooterItemsProp[] }) => {
   return items.map((item, index) => {
     return (
-      <div key={`groupLink-${index}`} className="w-full">
+      <div key={`groupLink-${index}`} className="w-full max-h-fit">
         <FooterItem
           props={{
             groupTitle: item.groupTitle,
@@ -142,9 +142,9 @@ const FooterItem = ({ props }: { props: FooterItemsProp }) => {
   const isSmall = useMediaQuery("(max-width: 40rem)");
 
   return (
-    <div className="flex flex-col sm:flex-row justify-between h-[20rem] max-sm:min-h-[10rem] md:min-h-[15rem] ">
+    <div className="flex flex-col sm:flex-row min-h-fit sm:min-h-[18rem] md:min-h-[20rem] lg:min-h-[15rem]">
       {logo ? (
-        <div className="relative self-center m-[auto_auto] size-40 md:size-24 lg:size-32">
+        <div className="relative self-center m-8 md:m-auto size-40 md:size-24 lg:size-32">
           <Image
             src={logo.src}
             alt={logo.alt}
@@ -153,7 +153,7 @@ const FooterItem = ({ props }: { props: FooterItemsProp }) => {
           />
         </div>
       ) : (
-        <div className="flex flex-col size-full justify-between gap-4 p-4">
+        <div className="flex flex-col size-full max-h-fit justify-between gap-4 p-4">
           {groupLink && (
             <>
               <h2 className="text-lg sm:text-xl font-bold pb-2">

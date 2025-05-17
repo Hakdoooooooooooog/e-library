@@ -154,6 +154,6 @@
   }
 
   .footer {
-    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 sm:gap-4 p-4 bg-blue-900 text-background;
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 sm:gap-4 px-4 bg-blue-900 text-background;
   }
 }
