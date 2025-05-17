@@ -64,10 +64,10 @@ export const services: ServiceDetails[] = [
   },
   {
     slug: "study-space",
-    title: "Reading Room",
-    subtitle: "Quiet Study Environment",
+    title: "Study Space",
+    subtitle: "Quiet Study Environment for Students",
     description:
-      "Enjoy our spacious and quiet reading room, designed for focused study and comfortable reading. Perfect for individual or group study sessions.",
+      "Our library offers a variety of study spaces, including individual carrels and group study areas, designed to provide a conducive environment for learning and collaboration.",
     iconName: "FiBook",
     iconBgColor: "bg-amber-100",
     iconColor: "text-amber-600",
@@ -79,6 +79,8 @@ export const services: ServiceDetails[] = [
       "Natural lighting",
       "Comfortable seating",
       "Climate controlled environment",
+      "Power outlets available",
+      "bookshelves and resources",
     ],
     guidelines: [
       {
@@ -90,75 +92,12 @@ export const services: ServiceDetails[] = [
         detail: "No food or drinks allowed",
       },
       {
+        title: "Personal Items",
+        detail: "Keep personal items with you",
+      },
+      {
         title: "Group Study",
         detail: "Designated areas available",
-      },
-    ],
-  },
-  {
-    slug: "wifi-access",
-    title: "Free WiFi Access",
-    subtitle: "High-Speed Internet Connection",
-    description:
-      "Stay connected with our high-speed WiFi network, perfect for online research, virtual learning, and accessing digital resources.",
-    iconName: "FiWifi",
-    iconBgColor: "bg-green-100",
-    iconColor: "text-green-600",
-    heroImage: "https://placehold.co/1920x1080/gray/white?text=WiFi+Coverage",
-    detailImage: "https://placehold.co/800x600/gray/white?text=WiFi+Service",
-    features: [
-      "High-speed connection",
-      "Wide coverage area",
-      "Secure network",
-      "Easy access",
-      "Multiple device support",
-    ],
-    guidelines: [
-      {
-        title: "Access Hours",
-        detail: "Available during library hours",
-      },
-      {
-        title: "Authentication",
-        detail: "No password required",
-      },
-      {
-        title: "Usage Policy",
-        detail: "Fair use policy applies",
-      },
-    ],
-  },
-  {
-    slug: "printing-services",
-    title: "Free Printing Services",
-    subtitle: "Quality Printing Solutions",
-    description:
-      "Print your documents, research papers, and assignments at no cost. Our efficient printing system ensures quick and quality outputs.",
-    iconName: "FiPrinter",
-    iconBgColor: "bg-purple-100",
-    iconColor: "text-purple-600",
-    heroImage:
-      "https://placehold.co/1920x1080/gray/white?text=Printing+Services",
-    detailImage: "https://placehold.co/800x600/gray/white?text=Printing+Area",
-    features: [
-      "High-quality printing",
-      "Black & white and color options",
-      "Multiple paper sizes",
-      "Quick processing",
-      "Self-service stations",
-    ],
-    guidelines: [
-      {
-        title: "Daily Limit",
-        detail: "20 pages per student per day",
-      },
-      {
-        title: "File Types",
-        detail: "Common formats supported",
-      },
-      {
-        title: "Service Hours",
-        detail: "During library hours",
       },
     ],
   },
