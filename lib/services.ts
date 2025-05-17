@@ -18,10 +18,10 @@ export type ServiceDetails = {
 export const services: ServiceDetails[] = [
   {
     slug: "free-internet-%26-computer-use",
-    title: "Computer Facilities",
-    subtitle: "Modern Computer Workstations",
+    title: "Free Internet & Computer Use",
+    subtitle: "Computer Facilities",
     description:
-      "Access our state-of-the-art computer facilities equipped with high-speed internet and essential software for your research, assignments, and digital learning needs.",
+      "Access our state-of-the-art computer facilities equipped with high-speed internet and the latest software. Perfect for research, assignments, and online learning.",
     iconName: "FiMonitor",
     iconBgColor: "bg-blue-100",
     iconColor: "text-blue-600",
