@@ -80,6 +80,7 @@ const Navbar = ({
 const NavbarLinks = ({ data }: { data: NavbarProps }) => {
   const { isOpen, setIsOpen } = useNavbarStore(["isOpen", "setIsOpen"]);
   const pathname = usePathname();
+  const isServicesPage = pathname.startsWith("/services");
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -106,7 +107,7 @@ const NavbarLinks = ({ data }: { data: NavbarProps }) => {
         </div>
       </div>
 
-      {pathname === "/services" && (
+      {!isServicesPage && (
         <div onMouseLeave={() => setIsOpen(false)} className="flex md:hidden">
           <button
             onClick={toggleDropdown}

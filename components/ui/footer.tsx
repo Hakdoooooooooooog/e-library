@@ -7,6 +7,7 @@ import { MdMailOutline } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { usePathname } from "next/navigation";
 
 type FooterItemsProp = {
   groupTitle?: string;
@@ -103,9 +104,11 @@ const items: FooterItemsProp[] = [
 ];
 
 const Footer = () => {
+  const pathname = usePathname();
+  const isServicesPage = pathname.startsWith("/services");
   return (
     <div className="footer">
-      <FooterItems items={items} />
+      {!isServicesPage && <FooterItems items={items} />}
       <div className="text-center pt-4 col-span-full">
         <Separator className="hidden md:block" />
         <p className="text-xs sm:text-sm font-bold pt-4">
