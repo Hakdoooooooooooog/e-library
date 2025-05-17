@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: process.env.NEXT_PUBLIC_BASE_URL,
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/logo-hero.png`,
+        url: "/images/logo-hero.png",
         width: 800,
         height: 600,
       },
