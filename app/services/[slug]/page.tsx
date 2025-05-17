@@ -3,14 +3,13 @@ import { services } from "@/lib/services";
 import { notFound } from "next/navigation";
 import ServicesDescription from "./component/services-description";
 import ServicesGuidelines from "./component/services-guidelines";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import BackButton from "./component/back-button";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-  parent: ResolvingMetadata;
 }): Promise<Metadata> {
   const { slug } = await params;
 
