@@ -5,17 +5,17 @@ export const CarouselItems: CarouselItemProps[] = [
     id: 1,
     title: "Free Internet & Computer Use",
     description:
-      "The General Trias City Public Library provides comprehensive services including books, e-books, digital resources, and research assistance. We offer study spaces, computer access, and educational programs, supported by our dedicated staff.",
-    image: "/service-1.jpeg",
-    link: "",
+      "Access state-of-the-art computer facilities with high-speed internet for research, assignments, and digital learning.",
+    image: "/images/services/service-1.jpeg",
+    link: "free-internet-computer-use",
   },
   {
     id: 2,
     title: "Study Space",
     description:
-      "The General Trias City Public Library provides comprehensive services including books, e-books, digital resources, and research assistance. We offer study spaces, computer access, and educational programs, supported by our dedicated staff.",
-    image: "/service-2.jpeg",
-    link: "",
+      "Enjoy our spacious and quiet reading room designed for focused study and comfortable reading sessions.",
+    image: "/images/services/service-2.jpeg",
+    link: "study-space",
   },
 ];
 

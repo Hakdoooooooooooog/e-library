@@ -8,7 +8,7 @@ const HeroSection = () => {
           priority
           className="hero-image"
           fill
-          src="/hero-img.jpeg"
+          src="/images/hero-img.jpeg"
           alt="Hero-image"
         />
       </div>
@@ -18,7 +18,7 @@ const HeroSection = () => {
           <div className="flex w-full items-center gap-4">
             <div className="relative size-25 flex-shrink-0">
               <Image
-                src="/logo-hero.png"
+                src="/images/logo-hero.png"
                 alt="Public-library-logo"
                 fill
                 sizes="(100vw) 6rem, (max-width: 768px) 3rem, (max-width: 1200px) 4.5rem, 6rem"

@@ -25,7 +25,7 @@ const HistorySection = () => {
           <div className="grid gap-6 md:grid-cols-2 md:gap-10 items-center">
             <div className="relative aspect-[4/3] overflow-hidden shadow-lg">
               <Image
-                src="/og-library-img.jpeg"
+                src="/images/og-library-img.jpeg"
                 alt="Original library building from 2006"
                 className="object-cover"
                 fill

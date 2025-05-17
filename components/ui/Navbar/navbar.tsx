@@ -91,7 +91,7 @@ const NavbarLinks = ({ data }: { data: NavbarProps }) => {
           className="absolute size-18 -left-8 sm:-left-4 md:left-8 lg:left-12 bottom-[-4rem] flex items-center"
         >
           <Image
-            src="/logo.png"
+            src="/images/logo.png"
             alt="Logo"
             fill
             priority

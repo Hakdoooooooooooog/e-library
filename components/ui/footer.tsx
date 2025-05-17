@@ -26,7 +26,7 @@ const items: FooterItemsProp[] = [
     groupTitle: undefined,
     groupLink: undefined,
     logo: {
-      src: "/logo-hero.png",
+      src: "/images/logo-hero.png",
       alt: "General-trias-city-official-logo",
     },
   },
