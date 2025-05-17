@@ -4,6 +4,30 @@ import { notFound } from "next/navigation";
 import ServicesDescription from "./component/services-description";
 import ServicesGuidelines from "./component/services-guidelines";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const service = services.find((s) => s.slug === slug);
+
+  if (!service) {
+    return {};
+  }
+
+  return {
+    title: service.title,
+    description: service.subtitle,
+    openGraph: {
+      title: service.title,
+      description: service.subtitle,
+      images: [service.heroImage],
+    },
+  };
+}
+
 export default async function Services({
   params,
 }: {
