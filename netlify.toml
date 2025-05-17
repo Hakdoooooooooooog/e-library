@@ -1,0 +1,3 @@
+[build]
+ publiish = ".next"
+ command = "npm run build"
