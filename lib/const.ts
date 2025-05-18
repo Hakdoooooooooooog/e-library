@@ -24,7 +24,7 @@ export const visionMissionData: VisionMissionProps[] = [
     id: 1,
     title: "Vision",
     description:
-      "The City Public LIbrary of General Trias (CPLGT) dreams of serving the students of the City of General Trias especially those who are enrolled in public schools providing easy access to information with the available reading resources and internet connection.",
+      "The City Public Library of General Trias (CPLGT) dreams of serving the students of the City of General Trias especially those who are enrolled in public schools providing easy access to information with the available reading resources and internet connection.",
   },
   {
     id: 2,

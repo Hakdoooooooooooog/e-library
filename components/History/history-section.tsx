@@ -23,7 +23,7 @@ const HistorySection = () => {
         <div className="grid gap-10 md:gap-16">
           {/* Historical Introduction */}
           <div className="grid gap-6 md:grid-cols-2 md:gap-10 items-center">
-            <div className="relative aspect-[4/3] overflow-hidden shadow-lg">
+            <div className="relative aspect-[4/3] overflow-hidden shadow-lg rounded-lg">
               <Image
                 src="/images/og-library-img.jpeg"
                 alt="Original library building from 2006"
