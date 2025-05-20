@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 export default function Loading() {
   return (
     <AnimatePresence mode="wait">
-      <LoadingScreen key="loading-root" />
+      <LoadingScreen key="loading-main" />
     </AnimatePresence>
   );
 }
