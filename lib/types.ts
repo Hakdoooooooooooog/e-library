@@ -12,3 +12,9 @@ export type VisionMissionProps = {
   description: string;
   descriptionLists?: Array<string> | undefined;
 };
+
+export type TimelineEvent = {
+  year: string;
+  title: string;
+  description: string;
+};

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { TripleLineSeparator } from "@/components/ui/separator";
-import { HistoryTimeline } from "./history-timeline";
+import HistoryTimeline from "./history-timeline";
+import HistoryIntroduction from "./history-introduction";
 
 const HistorySection = () => {
   return (
@@ -22,38 +22,7 @@ const HistorySection = () => {
 
         <div className="grid gap-10 md:gap-16">
           {/* Historical Introduction */}
-          <div className="grid gap-6 md:grid-cols-2 md:gap-10 items-center">
-            <div className="relative aspect-[4/3] overflow-hidden shadow-lg rounded-lg">
-              <Image
-                src="/images/og-library-img.jpeg"
-                alt="Original library building from 2006"
-                className="object-cover"
-                fill
-                sizes="(max-width: 768px) 100%, (max-width: 1200px) 100%, 100%"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
-                <p className="text-sm font-medium">
-                  The Library building, circa 2006
-                </p>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-slate-800">
-                Our Foundation
-              </h3>
-              <p className="text-slate-700">
-                Established in 2006, our library started with a modest
-                collection of 1,000 books in a small facility within General
-                Trias City, driven by the vision of local government leaders.
-              </p>
-              <p className="text-slate-700">
-                Since then, we&apos;ve grown to become a vital educational hub,
-                fostering learning through various programs, digital resources,
-                and community initiatives that continue to enrich our
-                city&apos;s cultural landscape.
-              </p>
-            </div>
-          </div>
+          <HistoryIntroduction />
 
           {/* Timeline */}
           <div id="timeline" className="py-8">
@@ -62,41 +31,6 @@ const HistorySection = () => {
             </h3>
             <HistoryTimeline />
           </div>
-
-          {/* Expansion and Renovation
-          <div className="grid gap-6 md:grid-cols-2 md:gap-10 items-center">
-            <div className="space-y-4 order-2 md:order-1">
-              <h3 className="text-2xl font-semibold text-slate-800">
-                Modern Expansion
-              </h3>
-              <p className="text-slate-700">
-                In 2005, our library underwent its most significant renovation,
-                expanding to include a dedicated children&apos;s wing, digital
-                media lab, and community meeting spaces. The project carefully
-                preserved the historical elements of our building while
-                incorporating modern amenities and technology.
-              </p>
-              <p className="text-slate-700">
-                Today, our library houses over 500,000 physical items and
-                provides access to millions more through our digital collections
-                and interlibrary loan partnerships.
-              </p>
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg order-1 md:order-2">
-              <Image
-                src="https://placehold.co/800x600/gray/white?text=Modern+Library+Building"
-                alt="Modern library building after 2005 renovation"
-                className="object-cover"
-                fill
-                sizes="(max-width: 768px) 100%, (max-width: 1200px) 100%, 100%"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
-                <p className="text-sm font-medium">
-                  Our library after the 2005 renovation and expansion
-                </p>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
